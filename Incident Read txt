@@ -12,5 +12,12 @@ Changed to 1
 Status changed from unavailable to available.
 
 Detection: 
-Noticed that the node for Garfana was unavailable
+Noticed that the node for upcommerce-app-two was unavailable when services were checked
+
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE
+grafana                             1/1     1            1           15m
+prometheus-kube-state-metrics       1/1     1            1           15m
+prometheus-prometheus-pushgateway   1/1     1            1           15m
+prometheus-server                   1/1     1            1           15m
+upcommerce-app-two                  0/1     1            0           14m
  
