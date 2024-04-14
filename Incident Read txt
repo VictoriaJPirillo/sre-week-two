@@ -1,0 +1,16 @@
+###Fundamentals of SRE Post-mortem
+Incident title: App Two Downtime
+
+Troubleshooting
+Ran each of these commands: 
+kubectl apply -f deployment.yml -n sre
+kubectl apply -f service.yml -n sre
+
+Resolution: 
+CPU set at 10
+Changed to 1
+Status changed from unavailable to available.
+
+Detection: 
+Noticed that the node for Garfana was unavailable
+ 
