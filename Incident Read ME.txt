@@ -21,3 +21,23 @@ prometheus-prometheus-pushgateway   1/1     1            1           15m
 prometheus-server                   1/1     1            1           15m
 upcommerce-app-two                  0/1     1            0           14m
  
+Command: 
+$ kubectl get svc -n sre
+Service Availability Check: 
+upcommerce-service-two   NodePort  10.99.95.78   <none>  5000:32485/TCP 6m18s
+@VictoriaJPirillo ➜ /workspaces/sre-week-two (main) $ 
+
+
+Queries used: 
+kube_deployment_status_replicas_unavailable{instance="10.244.0.3:8080"}
+ALERTS{app_kubernetes_io_component="metrics"}
+kube_node_info{node="minikube"}
+
+Two Alerts: 
+Occurrence - 19:14:00 and 19:14:45 LowMemory
+Occurrence - 19:15:00 and 19:17:15 LowMemory
+
+Exploring the data: 	
+Unavailable instance = 10.244.0.3:8080
+Alerts = LowMemory
+Node specific = CPU capacity 2
